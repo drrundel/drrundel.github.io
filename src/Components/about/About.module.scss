@@ -3,9 +3,44 @@
 .pink {
   color: $pink;
 }
-
+.gray {
+  color: #ffffff;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.red {
+  color: #c33a3a;
+}
 .green {
-  color: $green;
+  color: #d4e157;
+}
+.purple {
+  color: #ea80fc;
+}
+.yellow {
+  color:#ffcf2a;
+}
+.commandGreen {
+  color: #59912c;
+}
+.schoolFile {
+
+}
+.schooldir {
+  color: #00a47f
+}
+
+.skillsThreeColumn {
+  columns: 1;
+  @media only screen and (min-width: 940px) {
+    columns: 3;
+  }
+
+  li {
+    margin: 0;
+    line-height: 1.75;
+  }
 }
 
 .skills {
@@ -18,4 +53,9 @@
     margin: 0;
     line-height: 1.75;
   }
+}
+.muiradio {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding-right: 1em
 }

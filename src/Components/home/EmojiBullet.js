@@ -11,15 +11,16 @@ function EmojiBullet(props) {
     const Item = styled(Box)(({ theme }) => ({
     elevation: 0,
     fontSize: '2.5vh',
-  padding: theme.spacing(1),
+  padding: '0.5vh',
+        paddingLeft: '2vh',
   textAlign: 'left',
   color: !darkMode ? '#000000' : '#fff',
     backgroundOpacity: 1
 }));
     const ItemIcon = styled(Box)(({ theme }) => ({
     elevation: 0,
-    fontSize: '3.5vh',
-  padding: theme.spacing(1),
+    fontSize: '3.0vh',
+  padding: '0.5vh',
   textAlign: 'left',
   color: !darkMode ? '#000000' : '#fff',
     backgroundOpacity: 1

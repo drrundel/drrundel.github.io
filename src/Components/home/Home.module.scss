@@ -58,7 +58,7 @@ a:hover {
 
 .gradient
 {
-    background: linear-gradient(130deg, #6132c1, #757575, #9f85cf);
+    background: linear-gradient(130deg, #ab47bc, #757575, #ce93d8);
   -webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
     -webkit-animation: Animation 5s ease infinite;
@@ -81,4 +81,10 @@ a:hover {
     0%{background-position:10% 0%}
     50%{background-position:91% 100%}
     100%{background-position:10% 0%}
+}
+
+.Typewriter {
+  opacity: 0.9;
+  color: #ce93d8;
+  font-style: italic;
 }
