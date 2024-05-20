@@ -13,7 +13,7 @@ import { Typewriter } from 'react-simple-typewriter'
 export default function Home({innerRef}) {
     let detectedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
     return (
-        <Box ref={innerRef} component={'main'} display={'flex'} flexDirection={{xs: 'column', md: 'row'}}
+        <Box sx={{pt: '2rem'}} ref={innerRef} component={'main'} display={'flex'} flexDirection={{xs: 'column', md: 'row'}}
              alignItems={'center'}
              justifyContent={'center'} minHeight={'calc(100vh - 175px)'} id={'home'}>
             <Box className={classNames(Style.avatar, Style.shadowed)} alt={'image of developer'}

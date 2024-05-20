@@ -2,7 +2,6 @@ import React from 'react';
 import Explorer from "./Explorer";
 import {Box} from "@mui/material";
 import {info} from "../../info/Info";
-
 import ResumeButton from "../ResumeButton"
 
 
@@ -21,6 +20,7 @@ export default function Portfolio({innerRef}) {
         {children}
       </Box>
     );
+
     return (
         <Box
             ref={innerRef}
@@ -33,7 +33,6 @@ export default function Portfolio({innerRef}) {
             <CenteredBox>
                 <ResumeButton topMargin={'-1rem'}/>
             </CenteredBox>
-
             <Explorer data={info}/>
         </Box>
     );

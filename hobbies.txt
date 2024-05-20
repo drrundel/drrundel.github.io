@@ -1,6 +1,0 @@
-label: '3D Printing',
-label: 'Arduino/Raspberry Pi',
-label: 'Playing/Watching Hockey',
-label: 'Exploring/Walking',
-label: 'Traveling',
-label: 'Trying New Foods',

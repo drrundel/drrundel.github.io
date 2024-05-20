@@ -11,11 +11,11 @@ import {
     KeyboardArrowLeft,
     KeyboardArrowRight,
     Schedule,
-    WebAsset,
-    Search, CalendarViewWeek, IosShare,
-    Window, VerticalSplit, ViewQuilt, Sell, MoreHoriz, GroupWork
+    WebAsset, CalendarViewWeek,
+    Window, VerticalSplit, ViewQuilt, GroupWork
 } from "@mui/icons-material";
 import FolderDisplay from "./FolderDisplay";
+import ExplorerTagMobile from "./ExplorerTagMobile";
 
 const iconClass = "fa fa-circle";
 const textColorExplorer = '#edecec'
@@ -71,9 +71,9 @@ function Explorer({data}) {
 
   const handleClick = (newValue) => {
     setTagDisplay(newValue);
-    console.log(tagDisplay)
-    console.log(newValue)
   };
+      const isMid = window.innerWidth < 990;
+        const isMobile = window.innerWidth < 500;
 
     return (
 <Box
@@ -91,6 +91,7 @@ function Explorer({data}) {
     sx={{ backgroundColor: '#34303e', borderRadius: '0.5rem' }}
   >
     {/* Left Box with Sections */}
+      {!isMobile &&
     <Box
       sx={{
         backgroundColor: backgroundExplorer,
@@ -113,6 +114,7 @@ function Explorer({data}) {
       >
         Favorites
       </Typography>
+
       <Box>
         {favoritesArray.map((item, index) => (
           <Box
@@ -175,7 +177,7 @@ function Explorer({data}) {
       ))}
     </Box>
     </Box>
-
+}
     {/* Main Content Area */}
     <Box sx={{ flex: 1 }}>
       <Box
@@ -183,17 +185,23 @@ function Explorer({data}) {
           backgroundColor: backgroundExplorer,
           p: '0.75rem',
           borderBottom: 'solid 2px black',
-          borderRadius: '0 0.5rem 0 0',
-          width: '100%',
+          borderRadius: '0.5rem 0.5rem 0 0',
           boxSizing: 'border-box',
         }}
       >
+          {isMobile &&
+              <Box sx={{ mt: '-5px', ml: '-10px', pb: '5px', fontSize: '1rem'}}>
+        <i className={classNames(iconClass, Style.gray)} />
+        <i className={classNames(iconClass, Style.gray)} />
+        <i className={classNames(iconClass, Style.gray)} />
+      </Box>}
         <Box sx={{ display: 'flex', alignItems: 'center', mb: '0.1rem' }}>
           <KeyboardArrowLeft sx={topBarIcon} />
           <KeyboardArrowRight sx={topBarIcon} />
           <Typography variant="h3" sx={{ ml: '2rem', fontSize: '12pt' }}>
             Projects
           </Typography>
+            {!isMobile &&
             <Box sx={{ ml: 'auto', display: 'flex', alignItems: 'center' }}>
                          <Window
             sx={{
@@ -204,16 +212,22 @@ function Explorer({data}) {
               mr:2, // Ensure this is the first icon pushed to the far right
             }}
           />
-          <VerticalSplit sx={{ ...topBarIcon, mr: 2 }} />
-          <CalendarViewWeek sx={{ ...topBarIcon, mr: 2 }} />
-          <ViewQuilt sx={{ ...topBarIcon}} />
+            {isMid ? (
+  <VerticalSplit sx={{ ...topBarIcon, mr: 2 }} />
+) : (
+  <>
+    <VerticalSplit sx={{ ...topBarIcon, mr: 2 }} />
+    <CalendarViewWeek sx={{ ...topBarIcon, mr: 2 }} />
+    <ViewQuilt sx={{ ...topBarIcon }} />
+  </>
+)}
 </Box>
-  <Box sx={{ ml: 'auto', display: 'flex', alignItems: 'center' }}>
-                <IosShare sx={{ ...topBarIcon, mr: 2 }} />
-          <Sell sx={{ ...topBarIcon, mr: 2 }} />
-    <MoreHoriz sx={{ ...topBarIcon, mr: 2 }} />
-    <Search sx={{ ...topBarIcon }} />
-  </Box>
+            }
+        <ExplorerTagMobile isMobile={isMobile} tagArray={tagArray} topBarIcon={topBarIcon}
+      tagDisplay={tagDisplay}
+      setTagDisplay={setTagDisplay}
+        textColorExplorer={textColorExplorer}
+        tagIcon={tagIcon}/>
         </Box>
       </Box>
       <Box

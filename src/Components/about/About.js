@@ -263,7 +263,7 @@ export default function About({innerRef}) {
         inputProps: {'aria-label': item},
     });
 
-      const isMobile = window.innerWidth < 625;
+      const isMobile = window.innerWidth < 640;
       const splitIndex = Math.ceil(options.length / 2); // Calculate the split index
     return (
         <Box

@@ -1,6 +1,0 @@
-General Motors | Real-Time Software/System Engineer - SDV Embedded Platforms | WFH
-Feb. 2023 – Present
-• Standing up fullstack web application for network graph analysis supported by newly constructed relational &
-graph databases to track dependencies, change management, and status of systems in new and legacy electrical architectures.
-• Support redefinement of Systems Engineering at GM through decomposition and hierachy redefintion of functional features and systems to align with agile software development teams and MBSE methodology.
-• Develop innovative tools and dashboards to aid in productivity and knowledge transfer to all levels of the company, including the generation of system controls requirements as system architect liason to SW and controls teams.

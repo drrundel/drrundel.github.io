@@ -1,5 +1,0 @@
-AutoCAD
-NX
-Fusion360
-KiCad
-EAGLE
