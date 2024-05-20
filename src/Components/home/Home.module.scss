@@ -1,4 +1,19 @@
 @import "../../variables.modules";
+.social-icon {
+  transition: transform 0.2s ease-out;
+  color:red
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  color: rgba(128, 0, 128, 0.8); /* Purple with 80% opacity */
+}
+
+.firstline {
+  @media (max-width: 900px) {
+    padding-top: 3rem;
+  }
+}
 
 h1 {
   font-size: 2rem;
@@ -18,7 +33,6 @@ h2 {
   }
 }
 
-
 .hand {
   animation-name: wave;
   animation-duration: 2.5s;
@@ -33,8 +47,9 @@ a {
 }
 
 a:hover {
-  color: $lightgray;
   transition: color 200ms ease;
+    opacity: 0.9;
+  color: #ce93d8;
 }
 
 @keyframes wave {

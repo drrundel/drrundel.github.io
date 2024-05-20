@@ -9,6 +9,10 @@ nav {
   background-color: $dark;
 }
 
+.hoverp:hover {
+        opacity: 0.9;
+  color: #ce93d8;
+}
 
 .light {
   background-color: $white;

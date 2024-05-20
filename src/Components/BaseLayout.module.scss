@@ -2,6 +2,7 @@
 
 footer {
   color: $dark;
+  font-size: 14px !important;
 }
 
 .dark {
@@ -9,7 +10,7 @@ footer {
   color: $white;
   transition: all 400ms;
 
-  a, i, li {
+  a, i.home, li {
     color: $white;
     transition: color 400ms;
   }
@@ -21,6 +22,15 @@ footer {
   footer {
     color: $white;
   }
+}
+
+a.button {
+  margin-bottom: 1rem;
+  background-color:#ba68c8 !important;
+}
+
+a.button:hover {
+  color: #1f1f1f !important; /* Change font color to red on hover */
 }
 
 .light {

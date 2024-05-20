@@ -1,34 +1,39 @@
 import self from "../img/self.png"
-import mock1 from "../img/mock1.png"
-import mock2 from "../img/mock2.png"
-import mock3 from "../img/mock3.png"
-import mock4 from "../img/mock4.png"
-import mock5 from "../img/mock5.png"
+import hotnotch from "../img/hotnotch.webp"
+import blockchain from "../img/block.webp"
+import busbar from "../img/isoview.webp"
+import nhlhorn from "../img/nhlhorn.png"
+import portfoliosite from "../img/portfoliosite.png"
+import eccgroundtracks from "../img/eccgroundtracks.webp"
+import lander from "../img/animated_truss.gif"
+import glueiso from "../img/glueiso.webp"
+import mirroreye from "../img/mirroreyesimulation.webp"
+import getfile from "../img/getfile.png"
+import ipc from "../img/ipc.png"
+import grpc from "../img/grpc.png"
+import marketsim from "../img/marketsim.png"
+import indicator from "../img/indicator.png"
+import ml from "../img/ml.png"
 import { purple } from '@mui/material/colors';
+import {
+    AddBusiness,
+    Computer,
+    Diamond, Inventory, Lan,
+    LocalFireDepartment, LocalShipping,
+    Person,
+    PrecisionManufacturing,
+    Rocket,
+    SatelliteAlt,
+    Settings, Share, ShowChart,
+    SportsHockey
+} from "@mui/icons-material";
+import React from "react";
 
-/* Hi there! Thanks for checking out my portfolio template. Be sure to read the comments to get a better understanding of
-how to make this template work best for you! */
 
 export let colors_base = purple[200];
 export let colors = ["rgb(19, 20, 15)", "rgb(19, 20, 15)"];
-// linear-gradient(to right, rgb(19, 20, 15), rgb(210, 133, 255));
-/*
 
-I highly recommend using a gradient generator like https://gradientgenerator.paytonpierce.dev/ to generate a pair of colors that you like.
-These colors will be used to style your name on the homepage, the background of your picture, and some other accents throughout
-the site.
- */
-
-/* 
-This variable will change the layout of the website from multipage to single, scrollable page
-*/
 export let singlePage = false;
-
-/*
-So let's get started! Some of the info below is pretty self-explanatory, like 'firstName' and 'bio'. I'll try to explain anything
-that might not be obvious right off the bat :) I recommend looking at the template example live using "npm start" to get an idea
-of what each of the values mean.
- */
 
 export const info = {
     firstName: "Drake",
@@ -40,48 +45,38 @@ export const info = {
     baseColor: colors_base,
     miniBio: [ // these are just some "tidbits" about yourself. You can look at mine https://paytonjewell.github.io/#/ for an example if you'd like
         {
-            icon: 'fa fa-cogs',
+            icon: '⚙️',
             text: 'driven by innovation'
         },
         {
-            icon: 'fa fa-location-arrow',
+            icon: '🏙️',
             text: 'based in Chicago, IL'
         },
         {
-            icon: 'fa fa-code',
+            icon: '🛞',
             text: "Systems/Software Engineer at General Motors"
         },
         {
-            icon: 'fa fa-envelope-o',
-            text: "drrundel@umich.edu"
+            icon: '🐙',
+            text: "Detroit Red Wings Fan"
         }
     ],
     socials: [
         {
-            link: "https://facebook.com",
-            icon: 'fa fa-facebook',
-            label: 'facebook'
+            link: "mailto:drrundel@umich.edu",
+            icon: 'fa fa-envelope',
+            label: 'email'
         },
         {
-            link: "https://instagram.com",
-            icon: 'fa fa-instagram',
-            label: 'instagram'
-        },
-        {
-            link: "https://github.com",
+            link: "https://github.com/drrundel",
             icon: "fa fa-github",
             label: 'github'
         },
         {
-            link: "https://linkedin.com",
+            link: "https://www.linkedin.com/in/drundell/",
             icon: "fa fa-linkedin",
             label: 'linkedin'
         },
-        {
-            link: "https://twitter.com",
-            icon: "fa fa-twitter",
-            label: 'twitter'
-        }
 // Feel free to remove any of these that you don't have. I'll write an FAQ on how to add new ones later, let me know if you have a request for an icon!
 // Just change the links so that they lead to your social profiles.
 
@@ -122,60 +117,187 @@ export const info = {
         {
             frameworks: ['React', 'LaTeX', 'Flask'],
             languages: ['C','C++', 'Python', 'Java', 'Java/Typescript', 'HTML/CSS','VBA'],
-            sw_tools: ['Teamcenter', 'Unix Shell', 'MATLAB', 'MS Office', 'PowerBI', 'VS Code', 'IntelliJ CLion/PyCharm', 'PlatformIO', 'ESP-IDF', 'git','neo4j','Tom Sawyer'],
+            sw_tools: ['Teamcenter', 'Unix Shell', 'MATLAB', 'MS Office', 'PowerBI', 'VS Code', 'CLion', 'PyCharm', 'PlatformIO', 'ESP-IDF', 'git','neo4j','Tom Sawyer'],
             hw_tools: ['AutoCAD', 'NX', 'Fusion360', 'KiCad','EAGLE'],
         }
     ,
     hobbies: [
         {
-            label: 'reading',
-            emoji: '📖'
+            label: '3D Printing',
+            emoji: 'fa-cubes'
         },
         {
-            label: 'theater',
-            emoji: '🎭'
+            label: 'Arduino/ESP32/Raspberry Pi',
+            emoji: 'fa-microchip'
         },
         {
-            label: 'movies',
-            emoji: '🎥'
+            label: 'Watching/Playing Hockey',
+            emoji: 'fa-trophy'
         },
         {
-            label: 'cooking',
-            emoji: '🌶'
-        }
+            label: 'Exploring/Traveling',
+            emoji: 'fa-map-marker'
+        },
+        {
+            label: 'Trying New Foods',
+            emoji: 'fa-cutlery'
+        },
+
 // Same as above, change the emojis to match / relate to your hobbies or interests.
-// You can also remove the emojis if you'd like, I just think they look cute :P
     ],
-    portfolio: [ // This is where your portfolio projects will be detailed
+    portfolio: [ // This is where your old_portfolio projects will be detailed
         {
-            title: "Project 1",
-            live: "https://paytonpierce.dev", //this should be a link to the live version of your project, think github pages, netlify, heroku, etc. Or your own domain, if you have it.
-            source: "https://github.com/paytonjewell", // this should be a link to the **repository** of the project, where the code is hosted.
-            image: mock1
+            category: "Personal",
+            title: "Personal Portfolio Website",
+            usedTech: "HTML/CSS, ReactJS, Javascript",
+            description: "Portfolio website to showcase work history, education, projects, and some fun facts about me. You're here now!",
+            source: "https://drrundel.github.io",
+            image: portfoliosite,
+            percentComplete: 100,
+            icon: <Person sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {
-            title: "Project 2",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock2
+            category: "Undergraduate",
+            title: "Regenerative Nozzle Wall Cooling Simulation",
+            usedTech: "Python, MATLAB, LaTeX",
+            description: "Simulated the solution to the heat transfer equation using a finite-element solver on the three domains.",
+            source: "../docs/regenerative_cooling_project.pdf", // this should be a link to the **repository** of the project, where the code is hosted.
+            image: hotnotch,
+            percentComplete: 100,
+            icon: <LocalFireDepartment sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+            {
+            category: "Undergraduate",
+            title: "Lunar Lander Truss",
+            usedTech: "MATLAB, LaTeX",
+            description: "Simulated a leg of a lunar lander using differential equations stemming from the physics of damped oscillations.",
+            source: "../docs/lunar_lander_project.pdf", // this should be a link to the **repository** of the project, where the code is hosted.
+            image: lander,
+            percentComplete: 100,
+            icon: <SatelliteAlt sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {
-            title: "Project 3",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock3
+            category: "Personal",
+            title: "IOT Connected NHL Goal Horn",
+            usedTech: "Python, AWS, ESP32, C, C++, Git, PCB Design",
+            description: "Embedded real-time system with custom designed PCB supporting an ESP32 connected to AWS with less than 3\n" +
+                "second response to a National Hockey League API endpoint event.",
+            source: "Coming Soon...",
+            image: nhlhorn,
+            percentComplete: 80,
+            icon: <SportsHockey sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {
-            title: "Project 4",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock4
+            category: "Personal",
+            title: "Blockchain Project Website",
+            usedTech: "HTML/CSS, AWS, ETH, ReactJS",
+            description: "Responsible for back-end and interactive front-end in ReactJS to drive user engagement and visual appeal on\n" +
+                "project website founded on charitable aspects - affordable housing & climate change relief.",
+            source: "Coming Soon...",
+            image: blockchain,
+            percentComplete: 50,
+            icon: <Diamond sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5 }} />
+
         },
         {
-            title: "Project 5",
-            live: "https://paytonpierce.dev",
-            source: "https://github.com/paytonjewell",
-            image: mock5
-        }
+            category: "Work",
+            title: "Automated Busbar Insulator Assembly",
+            usedTech: "C, C++, MATLAB, Python, 3D Printing, Controls",
+            description: "Designed and programmed control system in C/C++, with data analysis completed in MATLAB, that interfaces with hardware components used to snap plastic covers on precision stamped busbars.",
+            source: "../docs/automated_busbar_insulator_assembly.pdf",
+            image: busbar,
+            percentComplete: 100,
+            icon: <PrecisionManufacturing sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Work",
+            title: "Semi-Automated Adhesive Applicator",
+            usedTech: "C, C++, MATLAB, Python, 3D Printing, Controls",
+            description: "Accelerates the assembly of cardboard reels for overseas shipping of stamped metal terminals through 2D linear motion glue extrusion.",
+            source: "../docs/semi_automated_glue_applicator.pdf",
+            image: glueiso,
+            percentComplete: 100,
+            icon: <Settings sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Undergraduate",
+            title: "Lunar Based Maneuvers for Applications in Space Transit",
+            usedTech: "GMAT, MATLAB, Space Dynamics",
+            description: "Completed simulations in NASA developed General Mission Analysis Tool Software (GMAT) with data analysis in MATLAB.",
+            source: "../docs/lunar_based_manuevers_for_applications_in_space_transit.pdf",
+            image: eccgroundtracks,
+            percentComplete: 100,
+            icon: <Rocket sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Undergraduate",
+            title: "Optimization of Truck Mirror Camera System",
+            usedTech: "Raspberry Pi, MATLAB, Aerodynamics, C++, Python",
+            description: "Sponsored design project concerning the aerodynamic improvement and soiling reduction of camera systems.",
+            source: "../docs/ae405_final_report.pdf",
+            image: mirroreye,
+            percentComplete: 100,
+            icon: <LocalShipping sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Graduate",
+            title: "Multi-Threaded GetFile Client-Server",
+            usedTech: "C, Sockets, Multithreading",
+            description: "Implemented a GetFile library that allows for a low level transfer between a Client and a Server through the use of a header with a predefined method and scheme. The project also used a GetFile library implementation that supports multiple clients connecting to a singular server through Multithreading.",
+            source: "Restricted from Sharing",
+            image: getfile,
+            percentComplete: 100,
+            icon: <Computer sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Graduate",
+            title: "IPC: Inter-Process Communication",
+            usedTech: "C, Sockets, Multithreading, libcurl",
+            description: "Implemented a WebProxy server utilizing libcurl's C interface to pass requests onto a Multithreaded GetFile server (project is also in my portfolio). A Cache Server was also created to be used by the Client and allows for communication with the proxy via shared memory.",
+            source: "Restricted from Sharing",
+            image: ipc,
+            percentComplete: 100,
+            icon: <Lan sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Graduate",
+            title: "gRPC and Distributed Systems",
+            usedTech: "C++, Sockets, Multithreading, gRPC, protobuf",
+            description: "Implemented a distributed file system in C++ to provide a synchronized directory of files between connected clients and the server (aka the \"source\" of truth for the shared files). gRPC and protobuf were pivotal to the working Fetch/Store algorithms to provide a robust method for the server and clients.",
+            source: "Restricted from Sharing",
+            image: grpc,
+            percentComplete: 100,
+            icon: <Share sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Graduate",
+            title: "Stock Market Simulator",
+            usedTech: "Python, Numpy, Pandas",
+            description: "Created a market simulator that accepts trading orders and keeps track of a portfolio’s value over time and can assess the performance of that portfolio. The implementation works by considering the shares of each stock in the portfolio on each day, as well as calculated the transaction cost from each simulated trade through an input \"Orders\" file.",
+            source: "Restricted from Sharing",
+            image: marketsim,
+            percentComplete: 100,
+            icon: <AddBusiness sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Graduate",
+            title: "Stock Market based Indicator Evaluation",
+            usedTech: "Python, Numpy, Pandas, Machine Learning",
+            description: "Developed technical indicators and a Theoretically Optimal Strategy to be used in the derivation of an intuition-based trading strategy and a Machine Learning based trading strategy. The Theoretically Optimal Strategy gives a baseline to see performance of a portfolio when placed against a Machine Learning strategy, versus an indicator only strategy.",
+            source: "Restricted from Sharing",
+            image: indicator,
+            percentComplete: 100,
+            icon: <Inventory sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Graduate",
+            title: "Stock Market based ML Strategy Evaluation",
+            usedTech: "Python, Numpy, Pandas, Machine Learning",
+            description: "Implemented a strategy of manual trading, one that took a considered number of stock market trading indicators, and compared it to a trading methodology centered around using Machine Learning (a strategy learner). The same stock market trading indicators were used in both scenarios to give a proper 1:1 comparison. The learners were developed within this project and the utilized with a training data set and a \"future\" data set and compared to the actual performance of the market.",
+            source: "Restricted from Sharing",
+            image: ml,
+            percentComplete: 100,
+            icon: <ShowChart sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
     ]
 }

@@ -6,7 +6,7 @@ import EmojiBullet from "./EmojiBullet";
 import SocialIcon from "./SocialIcon";
 import {Box} from "@mui/material";
 import {info} from "../../info/Info";
-
+import ResumeButton from "../ResumeButton"
 import { Typewriter } from 'react-simple-typewriter'
 
 
@@ -17,11 +17,11 @@ export default function Home({innerRef}) {
              alignItems={'center'}
              justifyContent={'center'} minHeight={'calc(100vh - 175px)'} id={'home'}>
             <Box className={classNames(Style.avatar, Style.shadowed)} alt={'image of developer'}
-                 style={{background: info.gradient}} component={'img'} src={me} width={{xs: '35vh', md: '40vh'}}
+                 style={{background: info.gradient}} component={'img'} src={me} maxWidth={'500px'}  maxHeight={'500px'} width={{xs: '35vh', md: '40vh'}}
                  height={{xs: '35vh', md: '40vh'}}
                  borderRadius={'50%'} p={'0.75rem'} mb={{xs: '1rem', sm: 0}} mr={{xs: 0, md: '2rem'}}/>
             <Box>
-                <h1>Hey, I'm <span style={{WebkitBackgroundClip: 'text'}}>{info.firstName}</span><span
+                <h1 className={Style.firstline}>Hey, I'm <span style={{WebkitBackgroundClip: 'text'}}>{info.firstName}</span><span
                     className={Style.hand}><i className={'fa fa-rocket ' + Style.gradient} aria-hidden="true"/></span>
                 </h1>
                 <h2 >I'm
@@ -48,6 +48,9 @@ export default function Home({innerRef}) {
                 {info.socials.map((social, index) => (
                         <SocialIcon key={index} link={social.link} icon={social.icon} label={social.label}/>
                     ))}
+                </Box>
+                <Box display={'flex'} gap={'1.5rem'} justifyContent={'center'}>
+                    <ResumeButton topMargin={'2rem'}/>
                 </Box>
             </Box>
         </Box>

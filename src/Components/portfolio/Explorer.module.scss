@@ -1,0 +1,101 @@
+@import "../../variables.modules";
+
+i {
+  padding-left: 0.5rem;
+
+  &.red {
+    color: $red;
+  }
+
+  &.amber {
+    color: $yellow;
+  }
+
+  &.green {
+    color: $green;
+  }
+  &.gray {
+    color: $lightgray;
+  }
+}
+
+.graytext {
+  color: $lightgray;
+  margin-bottom: 0.5rem,
+}
+
+.terminal {
+  p, li {
+    margin: 0.25rem 0;
+    color: $white;
+  }
+  h3 {
+    color: $white;
+  }
+  a, a:visited {
+    animation: changeColors 3s infinite;
+    font-weight: bold;
+  }
+}
+
+.favicons{
+  color: red;
+  font-size: 1rem;
+
+}
+@keyframes changeColors {
+  0% {
+    color: #00a47f;
+  }
+  33.3% {
+    color: #1d91e3;
+  }
+  66.6% {
+    color: #d419fe;
+  }
+  100% {
+    color: #00a47f;
+  }
+}
+
+a.button {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color:#ba68c8 !important;
+}
+
+a.button:hover {
+  color: #1f1f1f !important; /* Change font color to red on hover */
+}
+
+.buttoncs {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: #ffcf2a !important;
+}
+
+.buttoncs:hover {
+  color: #1f1f1f !important; /* Change font color to red on hover */
+}
+
+.buttonlock {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: #808080 !important;
+}
+
+.buttonlock:hover {
+  color: #1f1f1f !important; /* Change font color to red on hover */
+}
+
+.tagEntry {
+  padding: 2px;
+cursor: pointer !important;
+  border-radius: 4px;
+}
+.tagEntry:hover,
+.tagEntryselected {
+  padding: 2px;
+  background-color: #8c8c8c;
+  border-radius: 4px;
+}

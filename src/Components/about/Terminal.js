@@ -7,10 +7,10 @@ const iconClass = "fa fa-circle";
 
 function Terminal(props) {
    const {text} = props;
-
+//27242f
    return (
       <Box component={'section'} className={classNames(Style.terminal, Style.shadowed)}
-           width={{xs: '90%', md: '70%'}} borderRadius={'0.5rem'} mb={'4rem'}>
+           width={{xs: '90%', md: '70%'}} maxWidth={'1200px'} borderRadius={'0.5rem'} mb={'4rem'}>
          <Box sx={{backgroundColor: '#8c8c8c'}} p={'0.5rem'} borderRadius={'0.5rem 0.5rem 0 0'}
               fontSize={'1rem'}>
             <i className={classNames(iconClass, Style.red)}/>
@@ -18,7 +18,7 @@ function Terminal(props) {
             <i className={classNames(iconClass, Style.green)}/>
          </Box>
          <Box py={{xs: '1rem', md: '2rem'}} px={{xs: '2rem', md: '3rem'}} borderRadius={'0 0 0.5rem 0.5rem'}
-              sx={{backgroundColor: '#27242f'}} fontSize={'1.0rem'} fontFamily={'Courier New, Courier, monospace'}>
+              sx={{backgroundColor: '#34303e'}} fontSize={'1.0rem'} fontFamily={'Courier New, Courier, monospace'}>
             {text}
          </Box>
       </Box>

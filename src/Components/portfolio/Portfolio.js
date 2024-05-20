@@ -1,18 +1,40 @@
 import React from 'react';
-import PortfolioBlock from "./PortfolioBlock";
-import {Box, Grid} from "@mui/material";
+import Explorer from "./Explorer";
+import {Box} from "@mui/material";
 import {info} from "../../info/Info";
 
+import ResumeButton from "../ResumeButton"
+
+
 export default function Portfolio({innerRef}) {
+
+    const CenteredBox = ({ children }) => (
+      <Box
+        display="flex"
+        justifyContent="center"
+        flexWrap="wrap" // Allow flex items to wrap
+        alignItems="center" // Align items vertically in case of wrap
+        margin="0 auto" // Center horizontally
+        paddingLeft={"3vh"}
+        paddingRight={"3vh"}
+      >
+        {children}
+      </Box>
+    );
     return (
-        <Box id={'portfolio'} ref={innerRef}>
-            <Grid container display={'flex'} justifyContent={'center'}>
-                {info.portfolio.map((project, index) => (
-                   <Grid item xs={12} md={6} key={index}>
-                       <PortfolioBlock image={project.image} live={project.live} source={project.source} title={project.title} />
-                   </Grid>
-                ))}
-            </Grid>
+        <Box
+            ref={innerRef}
+            display={'flex'}
+            flexDirection={'column'}
+            alignItems={'center'}
+            mt={'3rem'}
+            id={'about'}
+        >
+            <CenteredBox>
+                <ResumeButton topMargin={'-1rem'}/>
+            </CenteredBox>
+
+            <Explorer data={info}/>
         </Box>
     );
 };

@@ -30,6 +30,7 @@ const links = [
         to: 'portfolio',
         active: 'portfolio'
     }
+
 ]
 
 // This function is used to create a scroll offset to compensate for the navbar
@@ -50,12 +51,12 @@ export default function Navbar({ darkMode, handleClick, active, setActive }) {
                 textTransform={'lowercase'} fontSize={'1rem'}>
                 {links.map((link, index) => (
                     <Box key={index} component={'li'} className={(link.active === active && !link.type) && Style.active}
-                        sx={{ borderImageSource: info.gradient }}>
+                        sx={{}}>
                         <Link to={singlePage ? `#${link.to}` : `/${link.to}`}
                         scroll={el => scrollWidthOffset(el)}
                             smooth
                             onClick={() => setActive(link.active)} className={Style.link}>
-                            {!link.type && <p style={{ padding: '0.5rem 0' }}>{link.name}</p>}
+                            {!link.type && <p className={Style.hoverp} style={{ padding: '0.5rem 0' }}>{link.name}</p>}
                             {link.type && <h1>{link.name}</h1>}
                         </Link>
                     </Box>

@@ -28,14 +28,11 @@ function EmojiBullet(props) {
 
     return (
 
-<Grid container spacing={2} columnSpacing={0.5}>
-  <Grid item xs={2}>
-    <ItemIcon><i className={icon} aria-hidden="true"/></ItemIcon>
-  </Grid>
-    <Grid item spacing={0} xs={10}>
-    <Item>{text}</Item>
-  </Grid>
-</Grid>
+        <Box component={'li'} fontSize={'1rem'} lineHeight={1.5} style={{cursor: 'default'}}>
+            <Box component={'span'} aria-label="cheese"
+                 role="img"
+                 mr={{xs: '0.5rem', md: '1rem'}} fontSize={'1.5rem'}>{icon}</Box> {text}
+        </Box>
     );
 }
 
