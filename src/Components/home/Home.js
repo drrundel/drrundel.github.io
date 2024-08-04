@@ -8,9 +8,17 @@ import {Box} from "@mui/material";
 import {info} from "../../info/Info";
 import ResumeButton from "../ResumeButton"
 import { Typewriter } from 'react-simple-typewriter'
+import ReactGA from "react-ga4";
 
 
 export default function Home({innerRef}) {
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/",
+        title: "Home"
+    })
+
+
     let detectedDarkMode = JSON.parse(localStorage.getItem('darkMode'));
     return (
         <Box sx={{pt: '2rem'}} ref={innerRef} component={'main'} display={'flex'} flexDirection={{xs: 'column', md: 'row'}}

@@ -6,7 +6,7 @@ import ReactGA from 'react-ga4';
 
 
 function App() {
-    ReactGA.initialize('8535186584');
+    ReactGA.initialize('G-RZNQ0E4NWX');
 
    return (
       <div>

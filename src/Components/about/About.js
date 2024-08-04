@@ -14,6 +14,7 @@ import {Engineering, Mood, School, SportsHockey, WorkspacePremium} from '@mui/ic
 
 import {Typewriter} from "react-simple-typewriter";
 import UseWindowDimensions from "../UseWindowDimensions";
+import ReactGA from "react-ga4";
 
 const options = [
     {text: 'About', icon: <Mood sx={{color: purple[100]}}/>, checkedIcon: <Mood sx={{color: purple[300]}}/>},
@@ -35,6 +36,12 @@ const options = [
     }]
 
 export default function About({innerRef}) {
+    ReactGA.send({
+        hitType: "pageview",
+        page: "/about",
+        title: "About"
+    })
+
     const [selectedValue, setSelectedValue] = useState(options[0].text);
     const handleChange = (event) => {
         setSelectedValue(event.target.value);

@@ -3,10 +3,15 @@ import Explorer from "./Explorer";
 import {Box} from "@mui/material";
 import {info} from "../../info/Info";
 import ResumeButton from "../ResumeButton"
+import ReactGA from "react-ga4";
 
 
 export default function Portfolio({innerRef}) {
-
+    ReactGA.send({
+            hitType: "pageview",
+            page: "/portfolio",
+            title: "Portfolio"
+        })
     const CenteredBox = ({ children }) => (
       <Box
         display="flex"
