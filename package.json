@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "homepage": "https://drrundel.github.io/",
+  "homepage": "https://drrundel.github.io",
   "version": "2.0.0",
   "private": true,
   "dependencies": {
@@ -12,6 +12,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^13.1.9",
     "ajv": "^8.11.0",
+    "caniuse-lite": "^1.0.30001647",
     "classnames": "^2.2.6",
     "moment": "^2.29.4",
     "node-forge": ">=1.3.0",
