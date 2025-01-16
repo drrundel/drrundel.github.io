@@ -1,10 +1,16 @@
 {
   "files": {
     "main.css": "/static/css/main.0c3d9342.css",
-    "main.js": "/static/js/main.3a256198.js",
+    "main.js": "/static/js/main.b7436630.js",
+    "static/media/siren_full.png": "/static/media/siren_full.d0cbdca73adcfad2ab54.png",
     "static/media/nhlhorn.png": "/static/media/nhlhorn.1fa259e523e99e259a96.png",
     "static/media/self.png": "/static/media/self.f99c8ed5e381921c140e.png",
     "static/media/animated_truss.gif": "/static/media/animated_truss.5a2d80fa8838c51e716b.gif",
+    "static/media/pcb_inside.png": "/static/media/pcb_inside.1ee8a13908faa6e4d50f.png",
+    "static/media/siren_frontend.png": "/static/media/siren_frontend.8414cee7d982db2bdee3.png",
+    "static/media/sirenandpcb.png": "/static/media/sirenandpcb.9482e644584065d96944.png",
+    "static/media/siren_admin.png": "/static/media/siren_admin.620e60d8cbd35720d502.png",
+    "static/media/pcb_front.png": "/static/media/pcb_front.ffee5f8b28443cac95d7.png",
     "static/media/portfoliosite.png": "/static/media/portfoliosite.2595c816410cf2edeb92.png",
     "static/media/isoview.jpg": "/static/media/isoview.e7ad97e065c779a89897.jpg",
     "static/media/indicator.png": "/static/media/indicator.4ed1336717f6a8181cf2.png",
@@ -14,16 +20,17 @@
     "static/media/mirroreyesimulation.jpg": "/static/media/mirroreyesimulation.f82b7f0659e3ce57fba1.jpg",
     "static/media/block.webp": "/static/media/block.6b9aa6cae400fa94015f.webp",
     "static/media/ml.png": "/static/media/ml.43759548b819a29747c6.png",
+    "static/media/nhlhorn_diagram.png": "/static/media/nhlhorn_diagram.0e1161e29567b48ececf.png",
     "static/media/getfile.png": "/static/media/getfile.e610faad8fc8d12cff55.png",
     "static/media/ipc.png": "/static/media/ipc.6bc8921beb591cd3bf7c.png",
     "static/media/hotnotch.webp": "/static/media/hotnotch.a321af3bc34a7466e0a6.webp",
     "static/media/grpc.png": "/static/media/grpc.06165c20384acfe7ef26.png",
     "index.html": "/index.html",
     "main.0c3d9342.css.map": "/static/css/main.0c3d9342.css.map",
-    "main.3a256198.js.map": "/static/js/main.3a256198.js.map"
+    "main.b7436630.js.map": "/static/js/main.b7436630.js.map"
   },
   "entrypoints": [
     "static/css/main.0c3d9342.css",
-    "static/js/main.3a256198.js"
+    "static/js/main.b7436630.js"
   ]
 }
