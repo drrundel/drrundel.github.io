@@ -18,8 +18,6 @@ export default function BaseLayout() {
    const refExplorer = useScrollObserver(setActive);
    let [darkMode, setDarkMode] = useState(false);
 
-
-
    function handleToggleDarkMode() {
       let oppositeOfCurrentDarkMode = !darkMode
       console.log(oppositeOfCurrentDarkMode)
@@ -37,6 +35,7 @@ export default function BaseLayout() {
       }
    }, [])
 
+
    return (
       <Box className={darkMode ? Style.dark : Style.light}>
          <Grid container display={'flex'} flexDirection={'column'} minHeight={'100vh'}
@@ -51,7 +50,7 @@ export default function BaseLayout() {
                <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                   py={'1.5rem'} sx={{ opacity: 0.7 }} width={'100%'}>
                   <p>Based on <a href={'https://github.com/paytonjewell/ReactPortfolioTemplate/tree/master'}>ReactPortfolioTemplate</a></p>
-                  <p>&copy; 2024</p>
+                  <p>&copy; 2025</p>
                </Box>
             </Grid>
          </Grid>
