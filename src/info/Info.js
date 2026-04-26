@@ -25,8 +25,8 @@ import { purple } from '@mui/material/colors';
 import {
     AddBusiness,
     Computer,
-    Diamond, Inventory, Lan,
-    LocalFireDepartment, LocalShipping,
+    Diamond, GridView, Inventory, Lan,
+    LocalFireDepartment, LocalFlorist, LocalShipping,
     Person,
     PrecisionManufacturing,
     Rocket,
@@ -57,11 +57,11 @@ export const info = {
         },
         {
             icon: '🏙️',
-            text: 'based in Chicago, IL'
+            text: 'based in Michigan'
         },
         {
             icon: '🛞',
-            text: "Systems/Software Engineer at General Motors"
+            text: "Full Stack Software Engineer at General Motors"
         },
         {
             icon: '🐙',
@@ -88,9 +88,14 @@ export const info = {
 // Just change the links so that they lead to your social profiles.
 
     ],
-    work_WI: ["Williams International","| Advanced Manufacturing Engineer | Pontiac, MI","June 2020 – July 2021","• Worked within the electrical manufacturing cell focusing on the development of tooling, fixtures, additive manufacturing and process plans for precision electromechanical assemblies.","• Lead development of plastic additive area within cell to provide low-cost and rapid manufacturing of tooling, while progressing to production hardware using resin additives."],
-    work_GM_SW: ["General Motors (SW)","| Real-Time Software/System Engineer - SDV Embedded Platforms | WFH","Feb. 2023 – Present","• Standing up fullstack web application for network graph analysis supported by newly constructed relational & graph databases to track dependencies, change management, and status of systems in new and legacy electrical architectures.",
-        "• Support redefinement of Systems Engineering at GM through decomposition and hierachy redefintion of functional features and systems to align with agile software development teams and MBSE methodology.","• Develop innovative tools and dashboards to aid in productivity and knowledge transfer to all levels of the company, including the generation of system controls requirements as system architect liason to SW and controls teams."],
+    work_FS: ["Falcon Stamping Inc.","| Mechanical Engineer Intern | Howell, MI","June 2017 – August 2019","• Designed and built an end-to-end automated control system (Arduino/C++, MATLAB, stepper motors, laser positioning) to replace manual busbar cover assembly — delivering a 250%+ speed improvement; system remains in production use today.",
+        "• Received direct customer validation on quality improvements from the automated system, which eliminated cover failures reported in the field.",
+        "• Modernized legacy hand-drawn progressive die designs into AutoCAD and contributed to assembly R&D alongside toolmakers and machinists on the production floor."],
+    work_WI: ["Williams International","| Advanced Manufacturing Engineer | Pontiac, MI","June 2020 – July 2021","• Worked within the electrical manufacturing cell focusing on the development of tooling, fixtures, additive manufacturing and process plans for precision electromechanical assemblies.","• Led development of the plastic additive area within the cell — progressing from rapid tooling into production hardware using resin-based systems, resulting in hundreds of thousands of dollars in cost savings through 3D-printed kitting trays."],
+    work_GM_SW: ["General Motors (SW)","| Full-Stack Software/System Engineer - SDV Embedded Platforms | Remote","Feb. 2023 – Present","• Lead full-stack engineer on a React/Flask internal application backed by PostgreSQL and Neo4j (AKS-hosted), providing unified architecture visualization and querying for ~200 users across engineering and leadership — including network graph views powered by Ogma by Linkurious.",
+        "• Own end-to-end data engineering in Databricks: automated nightly pipelines ingest heterogeneous gold sources (PLM, CI/CD, JIRA, MBSE) into Delta Lake and sync a dual PostgreSQL + Neo4j database, serving both the application and downstream GM analytics teams via Data Mesh.",
+        "• Serve as internal Neo4j graph architect — responsible for ontology design, Cypher query development, performance tuning, and direct engagement with Neo4j to optimize the AKS deployment.",
+        "• Support redefinition of Systems Engineering at GM through functional decomposition and hierarchy alignment with agile software teams and MBSE methodology; deliver executive-level storytelling connecting application capabilities to the SDV 2.0 strategy."],
     work_GM_DRE: ["General Motors (HW)","| Design Release Engineer - Air Delivery | Warren, MI","July 2021 – Feb. 2023","• First named author on two granted patents (US Patent No. 11,933,256 & 11,852,109 ) concerning novel approaches to vehicle gas distribution techniques into intake manifold runners","• Supported production and future components through innovative design/analysis studies, management of supplier contact, validation to testing methods, and cross functional communication to engine and vehicle program teams with focus in intake manifolds and engine covers.","• Ensured engine designs won in their market with the safest and highest quality components."],
     bioMain: "Hey! I'm Drake 👋🏼",
     bioWork: "I am a Systems/Software engineer at General Motors working across a variety of developments; deploying graph & relational databases, re-working system architectures, strengthening software testing strategies, and developing full stack web applications.",
@@ -122,10 +127,10 @@ export const info = {
     },
     skills:
         {
-            frameworks: ['React', 'LaTeX', 'Flask'],
-            languages: ['C','C++', 'Python', 'Java', 'Java/Typescript', 'HTML/CSS','VBA'],
-            sw_tools: ['Teamcenter', 'Unix Shell', 'MATLAB', 'MS Office', 'PowerBI', 'VS Code', 'CLion', 'PyCharm', 'PlatformIO', 'ESP-IDF', 'git','neo4j','Tom Sawyer'],
-            hw_tools: ['AutoCAD', 'NX', 'Fusion360', 'KiCad','EAGLE'],
+            frameworks: ['React', 'Flask', 'Express.js', 'Node.js', 'LVGL', 'LaTeX'],
+            languages: ['C', 'C++', 'Python', 'TypeScript', 'Java', 'HTML/CSS', 'MicroPython', 'VBA'],
+            sw_tools: ['git', 'Docker', 'Databricks', 'Azure/AKS', 'neo4j', 'PostgreSQL', 'SQLite', 'MQTT', 'Unix Shell', 'MATLAB', 'PlatformIO', 'VS Code', 'CLion', 'PyCharm', 'PowerBI', 'Teamcenter', 'Tom Sawyer'],
+            hw_tools: ['KiCad', 'Fusion360', 'AutoCAD', 'NX', 'EAGLE'],
         }
     ,
     hobbies: [
@@ -191,23 +196,46 @@ export const info = {
         },
         {
             category: "Personal",
-            title: "IoT Connected NHL Team Display & Goal Lamp",
-            usedTech: "React, Python, ESP32, C, C++, Git, PCB Design",
-            description: "Embedded real-time system with custom designed PCB supporting an ESP32 communicating with fullstack application through HTTP requests and MQTT pub/sub. System supports cycling of static team/player/game data and live game streaming with less than 3 second response to a National Hockey League API endpoint event.",
+            title: "Goal Siren — IoT NHL Goal Lamp",
+            usedTech: "React, TypeScript, Python, Flask, ESP32, C++, Docker, MQTT, SQLite, KiCAD, PCB Design, Raspberry Pi, Pillow",
+            description: "End-to-end IoT device that detects NHL goals in real time and triggers a siren, LED lamp, and dynamic TFT display. Custom-designed multi-revision PCB (KiCAD) hosts an ESP32 running cooperative state-machine firmware in C++. A Dockerized Python Flask backend (40+ REST endpoints) ingests the NHL live API, generates 240×320 display images via Pillow, and publishes live game events over MQTT to the device with sub-second latency. A React/TypeScript admin dashboard provides full system control including team selection, display rotation config, and hardware state management.",
             source: "Coming Soon...",
             image: [
                 { src: nhlhorn_full, title: 'Full View of the NHL Goal Lamp'},
                 { src: nhlhorn_pcb_inside, title: 'Rendering of the PCB inside the Goal Lamp' },
                 { src: nhlhorn_pcb_nextto, title: 'Rendering of the PCB next to the Goal Lamp' },
                 { src: nhlhorn_diagram, title: 'System Diagram'},
-                { src: nhlhorn_frontend_selector, title: 'Frontend Application - Display Selection (WIP)' },
-                { src: nhlhorn_frontend_admin, title: 'Frontend Application - Admin Panel (WIP)' },
+                { src: nhlhorn_frontend_selector, title: 'Frontend Application - Display Selection' },
+                { src: nhlhorn_frontend_admin, title: 'Frontend Application - Admin Panel' },
                 { src: pcb_front, title: 'Custom Designed PCB using ESP32'},
                 { src: nhlhorn_early, title: 'Early Prototype using v2 PCB' }
-
             ],
-            percentComplete: 80,
+            percentComplete: 90,
             icon: <SportsHockey sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Personal",
+            title: "RPI Matrix — NHL LED Matrix Scoreboard",
+            usedTech: "Node.js, TypeScript, React, MicroPython, ESP32, MQTT, SQLite, Express, Vite, HUB75, Material UI",
+            description: "Wall-mounted NHL LED scoreboard spanning a full IoT stack. A Node.js/TypeScript backend ingests live NHL data, renders pixel-perfect canvas frames using native C++ bindings (@napi-rs/canvas), and serves a raw RGB byte array directly to an ESP32 over MQTT. MicroPython firmware on the ESP32 pushes frames to a dual-panel 256×32 HUB75 LED matrix with animated slide transitions. A React dashboard provides team selection, drag-and-drop display ordering, brightness control, and a live browser preview via Server-Sent Events. All hardware fits in a custom 3D-printed enclosure.",
+            source: "Coming Soon...",
+            image: [
+                { src: portfoliosite, title: 'Image Coming Soon' },
+            ],
+            percentComplete: 85,
+            icon: <GridView sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
+        },
+        {
+            category: "Personal",
+            title: "PlantNode — IoT Plant Growth Monitor",
+            usedTech: "C++, ESP32-C3, KiCAD, LVGL, PlatformIO, Fusion 360, I2C, Arduino",
+            description: "Self-contained plant monitoring device built on a custom 2-layer KiCAD PCB inside a 3D-printed Fusion 360 enclosure. An ESP32-C3 reads a suite of sensors (ambient light, soil moisture, time-of-flight hand proximity) via I2C and renders animated plant growth stages on a 240×240 TFT display using an LVGL-based rendering engine. A WS2812B LED strip provides 12 color-temperature presets. Up to three nodes daisy-chain over UART via RJ45 connectors, streaming telemetry to a central dashboard.",
+            source: "Coming Soon...",
+            image: [
+                { src: portfoliosite, title: 'Image Coming Soon' },
+            ],
+            percentComplete: 70,
+            icon: <LocalFlorist sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {
             category: "Personal",

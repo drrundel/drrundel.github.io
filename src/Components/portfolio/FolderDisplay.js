@@ -5,7 +5,7 @@ import { Folder } from '@mui/icons-material/';
 import FolderModal from './FolderModal';
 import {tagArray} from "./Explorer"
 
-const getColorByName = (name) => {
+export const getColorByName = (name) => {
   const tag = tagArray.find(tag => tag.name === name);
   return tag ? tag.color : null;
 };
@@ -22,8 +22,7 @@ const getPortfolio = (tag, projects) => {
     return filteredPortfolio;
 };
 const FolderDisplay = ({ projects, tag }) => {
-    const color = getColorByName(tag); // Example usage
-    console.log(color)
+    // const color = getColorByName(tag); // Example usage
     const portfolio = getPortfolio(tag, projects)
   const [openModal, setOpenModal] = useState(false);
   const [selectedProject, setSelectedProject] = useState(portfolio[0]);
