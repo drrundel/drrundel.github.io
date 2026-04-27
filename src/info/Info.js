@@ -180,6 +180,7 @@ export const info = {
                 { src: hotnotch, title: 'Sample Notched Cross Section' },
             ],
             percentComplete: 100,
+            favorite: true,
             icon: <LocalFireDepartment sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
             {
@@ -211,6 +212,7 @@ export const info = {
                 { src: nhlhorn_early, title: 'Early Prototype using v2 PCB' }
             ],
             percentComplete: 90,
+            favorite: true,
             icon: <SportsHockey sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {
@@ -223,6 +225,7 @@ export const info = {
                 { src: portfoliosite, title: 'Image Coming Soon' },
             ],
             percentComplete: 85,
+            favorite: true,
             icon: <GridView sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {
@@ -235,6 +238,7 @@ export const info = {
                 { src: portfoliosite, title: 'Image Coming Soon' },
             ],
             percentComplete: 70,
+            favorite: true,
             icon: <LocalFlorist sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {
@@ -261,6 +265,7 @@ export const info = {
                 { src: busbar, title: 'Completed System in Production Environment' },
             ],
             percentComplete: 100,
+            favorite: true,
             icon: <PrecisionManufacturing sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {
@@ -333,6 +338,7 @@ export const info = {
                 { src: grpc, title: 'System Diagram for File System'},
             ],
             percentComplete: 100,
+            favorite: true,
             icon: <Share sx={{ position: 'absolute', zIndex: 1, marginTop: 0.5  }} />
         },
         {

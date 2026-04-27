@@ -138,7 +138,7 @@ export default function About({innerRef}) {
             </>;
         } else if (value === 'Work') {
             return <>
-                {[info.work_GM_SW, info.work_GM_DRE, info.work_WI].map((workSection, index) => (
+                {[info.work_GM_SW, info.work_GM_DRE, info.work_WI, info.work_FS].map((workSection, index) => (
                     <div key={index}>
                         <p>
                             <span style={{color: info.baseColor}}>{firstName} <span

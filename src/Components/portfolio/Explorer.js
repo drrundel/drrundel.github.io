@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Style from "./Explorer.module.scss";
 import classNames from "classnames";
-import {Box, Typography} from '@mui/material';
+import {Box, Divider, Typography} from '@mui/material';
 import {
     AccountTree,
     Apps,
@@ -11,6 +11,7 @@ import {
     KeyboardArrowLeft,
     KeyboardArrowRight,
     Schedule,
+    Star,
     WebAsset, CalendarViewWeek,
     Window, VerticalSplit, ViewQuilt, GroupWork
 } from "@mui/icons-material";
@@ -53,25 +54,17 @@ export const tagArray = [{name: 'All', color: '#ba5e5e'}, {name: 'Work', color: 
     }, {name: 'Personal', color: '#5fb5b6'}]
 
 function Explorer({data}) {
-    const favoritesArray = [{name: 'Recents', logo: <Schedule sx={styleIcon}/>, active: false}, {
-        name: 'Applications',
-        logo: <Apps sx={styleIcon}/>,
-        active: false
-    }, {name: 'Desktop', logo: <WebAsset sx={styleIcon}/>, active: false}, {
-        name: 'Projects',
-        logo: <AccountTree sx={styleIconNoHover}/>,
-        active: true
-    }, {name: 'Documents', logo: <Folder sx={styleIcon}/>, active: false}, {
-        name: 'Downloads',
-        logo: <FileDownload sx={styleIcon}/>,
-        active: false
-    }]
+    const [mode, setMode] = useState('Projects'); // 'Projects' | 'Favorites'
+    const [tagDisplay, setTagDisplay] = useState(tagArray[0].name);
 
-      const [tagDisplay, setTagDisplay] = useState(tagArray[0].name);
+    const handleModeClick = (newMode) => {
+        setMode(newMode);
+        setTagDisplay(tagArray[0].name); // reset tag to All on mode switch
+    };
 
-  const handleClick = (newValue) => {
-    setTagDisplay(newValue);
-  };
+    const handleClick = (newValue) => {
+        setTagDisplay(newValue);
+    };
       const isMid = window.innerWidth < 990;
         const isMobile = window.innerWidth < 500;
 
@@ -107,48 +100,49 @@ function Explorer({data}) {
         <i className={classNames(iconClass, Style.gray)} />
         <i className={classNames(iconClass, Style.gray)} />
       </Box>
-      {/* Favorites Section */}
+      {/* Folders Section */}
       <Typography
         variant="h6"
         sx={{ mb: '0.5rem', color: textColorExplorer, fontWeight: '900', fontSize: '1rem' }}
       >
-        Favorites
+        Folders
       </Typography>
 
-      <Box>
-        {favoritesArray.map((item, index) => (
-          <Box
-            key={index}
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                mb: '0.1rem',
-                borderRadius: item.active ? '4px' : 'none',
-                p: item.active ? '4px' : 'none',
-                pr: item.active ? '4rem' : 'none',
-                ml: item.active ? '-4px' : 'none',
-                backgroundColor: item.active ? selectedColor : 'none',
-              }}
-          >
-            {item.logo}
-            <Typography
-              variant="body1"
-              sx={{
-                ml: '0.1rem',
-                fontSize: '10pt',
-                ...(!item.active && {
-                  '&:hover': {
-                    color: '#8c8c8c',
-                  },
-                }),
-              }}
-            >
-              {item.name}
-            </Typography>
-
-          </Box>
-        ))}
+      {/* Favorites — clickable mode toggle */}
+      <Box
+        onClick={() => handleModeClick('Favorites')}
+        className={mode === 'Favorites' ? Style.tagEntryselected : Style.tagEntry}
+        sx={{ display: 'flex', alignItems: 'center', mb: '0.1rem' }}
+      >
+        <Star sx={{ color: '#f5c842', fontSize: '1.25rem', marginRight: '5px' }} />
+        <Typography variant="body1" sx={{ ml: '0.1rem', fontSize: '10pt' }}>Favorites</Typography>
       </Box>
+
+      <Divider sx={{ my: '0.5rem', borderColor: 'rgba(255,255,255,0.15)' }} />
+
+      {/* Other folders — decorative + Projects as mode toggle */}
+      {[
+        { name: 'Recents',      logo: <Schedule sx={styleIcon}/> },
+        { name: 'Applications', logo: <Apps sx={styleIcon}/> },
+        { name: 'Desktop',      logo: <WebAsset sx={styleIcon}/> },
+        { name: 'Projects',     logo: <AccountTree sx={styleIconNoHover}/> },
+        { name: 'Documents',    logo: <Folder sx={styleIcon}/> },
+        { name: 'Downloads',    logo: <FileDownload sx={styleIcon}/> },
+      ].map((item) => (
+        <Box
+          key={item.name}
+          onClick={item.name === 'Projects' ? () => handleModeClick('Projects') : undefined}
+          className={item.name === 'Projects'
+            ? (mode === 'Projects' ? Style.tagEntryselected : Style.tagEntry)
+            : undefined}
+          sx={{ display: 'flex', alignItems: 'center', mb: '0.1rem' }}
+        >
+          {item.logo}
+          <Typography variant="body1" sx={{ ml: '0.1rem', fontSize: '10pt' }}>
+            {item.name}
+          </Typography>
+        </Box>
+      ))}
 
       {/* Tags Section */}
       <Typography
@@ -239,7 +233,7 @@ function Explorer({data}) {
           color: 'white',
         }}
       >
-        <FolderDisplay projects={data} tag={tagDisplay}/>
+        <FolderDisplay projects={data} tag={tagDisplay} mode={mode}/>
       </Box>
     </Box>
   </Box>
